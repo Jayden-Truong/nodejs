@@ -1,0 +1,26 @@
+{
+  "name": "learn-nodejs",
+  "version": "1.0.0",
+  "description": "Learn nodejs",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jayden-Truong/nodejs.git"
+  },
+  "keywords": [
+    "nodejs"
+  ],
+  "author": "Jayden Truong",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jayden-Truong/nodejs/issues"
+  },
+  "homepage": "https://github.com/Jayden-Truong/nodejs#readme",
+  "dependencies": {
+    "express": "4.18.2"
+  }
+}
