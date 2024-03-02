@@ -9,6 +9,7 @@ const {
 
 router.get("/", getHomepage);
 router.get("/create", getCreatePage);
+router.get("/update/:id", getUpdatePage);
 router.get("/update", getUpdatePage);
 router.post("/create-user", postCreateUser);
 

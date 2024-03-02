@@ -10,6 +10,7 @@ const getCreatePage = (req, res) => {
 };
 
 const getUpdatePage = (req, res) => {
+  const userId = req.params.id;
   return res.render("update.ejs");
 };
 
