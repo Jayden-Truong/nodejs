@@ -1,7 +1,9 @@
 const pool = require("../config/database");
+const { getAllUser } = require("../services/CRUDService");
 
-const getHomepage = (req, res) => {
-  return res.render("home.ejs");
+const getHomepage = async (req, res) => {
+  let results = await getAllUser();
+  return res.render("home.ejs", { listUser: results });
 };
 const getCreatePage = (req, res) => {
   return res.render("create.ejs");
