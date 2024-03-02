@@ -3,7 +3,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/css/styles.css" />
-    <title>Update User</title>
+    <title>Delete User</title>
   </head>
   <body>
     <ul>
@@ -11,43 +11,26 @@
       <li><a href="/create">Create user</a></li>
     </ul>
     <div class="form">
-      <% user.forEach(function(item) { %>
-      <form action="/update-user" method="POST">
+      <form action="/delete-user" method="POST">
         <fieldset>
-          <legend>Form update user</legend>
+          <legend>Confirm delete user</legend>
           <label>Id:</label>
           <input
             type="text"
             id="userID"
             name="userID"
-            value="<%= item.id %>"
+            value="<%= user.id %>"
           /><br /><br />
-          <label>Name:</label>
           <label>Email:</label>
           <input
             type="text"
             id="emailId"
             name="emailId"
-            value="<%= item.email %>"
+            value="<%= user.email %>"
           /><br /><br />
-          <label>Name:</label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            value="<%= item.name %>"
-          /><br /><br />
-          <label>City:</label>
-          <input
-            type="text"
-            id="city"
-            name="city"
-            value="<%= item.city %>"
-          /><br /><br />
-          <input type="submit" value="Submit" />
+          <input type="submit" value="Confirm" />
         </fieldset>
       </form>
-      <% }); %>
     </div>
   </body>
 </html>

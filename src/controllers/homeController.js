@@ -1,5 +1,11 @@
 const pool = require("../config/database");
-const { getAllUser, getUserById } = require("../services/CRUDService");
+const {
+  getAllUser,
+  getUserById,
+  createUser,
+  updateUser,
+  deleteUser,
+} = require("../services/CRUDService");
 
 const getHomepage = async (req, res) => {
   let results = await getAllUser();
@@ -11,32 +17,39 @@ const getCreatePage = (req, res) => {
 
 const getUpdatePage = async (req, res) => {
   let result = await getUserById(req);
-  console.log("result", result);
   return res.render("update.ejs", { user: result });
 };
 
 const postCreateUser = async (req, res) => {
-  let { emailId, name, city } = req.body;
-
-  try {
-    const connection = await pool.getConnection();
-    const [results, fields] = await connection.execute(
-      `INSERT INTO Persons (email, name, city) VALUES (?,?,?)`,
-      [emailId, name, city]
-    );
-
-    console.log(results);
-    connection.release(); // Đảm bảo release connection sau khi sử dụng
-    res.send("Create new user success");
-  } catch (error) {
-    console.error("Error executing query: ", error);
-    res.status(500).send("Internal Server Error");
-  }
+  let result = await createUser(req);
+  console.log(result);
+  res.send("Create new user success");
 };
 
+const postUpdateUser = async (req, res) => {
+  const result = await updateUser(req);
+  console.log(result);
+  res.send("Update user success");
+};
+
+const postDeleteUser = async (req, res) => {
+  let result = await getUserById(req);
+  res.render("delete.ejs", { user: result[0] });
+};
+
+const postHandleRemoveUser = async (req, res) => {
+  console.log("req.body", req.body);
+  const id = req.body.userID;
+  let result = await deleteUser(id);
+  console.log("result", result);
+  res.redirect("/");
+};
 module.exports = {
   getHomepage,
-  postCreateUser,
   getCreatePage,
   getUpdatePage,
+  postCreateUser,
+  postUpdateUser,
+  postDeleteUser,
+  postHandleRemoveUser,
 };
