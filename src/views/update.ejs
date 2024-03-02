@@ -1,0 +1,28 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <title>Update User</title>
+  </head>
+  <body>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/create">Create user</a></li>
+    </ul>
+    <div class="form">
+      <form action="/create-user" method="POST">
+        <fieldset>
+          <legend>Form update user</legend>
+          <label>Email:</label>
+          <input type="text" id="emailId" name="emailId" /><br /><br />
+          <label>Name:</label>
+          <input type="text" id="name" name="name" /><br /><br />
+          <label>City:</label>
+          <input type="text" id="city" name="city" /><br /><br />
+          <input type="submit" value="Submit" />
+        </fieldset>
+      </form>
+    </div>
+  </body>
+</html>
