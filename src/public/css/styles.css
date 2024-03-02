@@ -47,3 +47,9 @@ th {
 tr:nth-child(even) {
   background-color: #dddddd;
 }
+
+#emailId,
+#name,
+#city {
+  width: 300px;
+}

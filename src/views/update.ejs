@@ -12,16 +12,33 @@
     </ul>
     <div class="form">
       <form action="/create-user" method="POST">
+        <% user.forEach(function(item) { %>
         <fieldset>
           <legend>Form update user</legend>
           <label>Email:</label>
-          <input type="text" id="emailId" name="emailId" /><br /><br />
+          <input
+            type="text"
+            id="emailId"
+            name="emailId"
+            value="<%= item.email %>"
+          /><br /><br />
           <label>Name:</label>
-          <input type="text" id="name" name="name" /><br /><br />
+          <input
+            type="text"
+            id="name"
+            name="name"
+            value="<%= item.name %>"
+          /><br /><br />
           <label>City:</label>
-          <input type="text" id="city" name="city" /><br /><br />
+          <input
+            type="text"
+            id="city"
+            name="city"
+            value="<%= item.city %>"
+          /><br /><br />
           <input type="submit" value="Submit" />
         </fieldset>
+        <% }); %>
       </form>
     </div>
   </body>
