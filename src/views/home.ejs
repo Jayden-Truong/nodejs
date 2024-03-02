@@ -7,24 +7,22 @@
   </head>
   <body>
     <ul>
-      <li><a href="default.asp">Home</a></li>
-      <li><a href="news.asp">News</a></li>
-      <li><a href="contact.asp">Contact</a></li>
-      <li><a href="about.asp">About</a></li>
+      <li><a class="active" href="/">Home</a></li>
+      <li><a href="/create">Create user</a></li>
     </ul>
-    <div class="form">
-      <form action="/create-user" method="POST">
-        <fieldset>
-          <legend>Form add new user</legend>
-          <label>Email:</label>
-          <input type="text" id="emailId" name="emailId" /><br /><br />
-          <label>Name:</label>
-          <input type="text" id="name" name="name" /><br /><br />
-          <label>City:</label>
-          <input type="text" id="city" name="city" /><br /><br />
-          <input type="submit" value="Submit" />
-        </fieldset>
-      </form>
-    </div>
+    <h2>List user</h2>
+    <table>
+      <tr>
+        <th>ID</th>
+        <th>Email</th>
+        <th>Name</th>
+        <th>City</th>
+      </tr>
+      <tr>
+        <td>Alfreds Futterkiste</td>
+        <td>Maria Anders</td>
+        <td>Germany</td>
+      </tr>
+    </table>
   </body>
 </html>
